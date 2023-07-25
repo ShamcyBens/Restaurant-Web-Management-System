@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Website's Blogs</title>
+  <link href="{% static 'css/blog.css' %}" rel="stylesheet" type="text/css" />
+  <script src="{% static 'js/script.js' %}"></script>
+  <link rel="icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>  
+          <li><a href="{% url 'search_videos' %}">YouTube Search</a></li>  
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="cards">
+        <img src='{%static "hotel/8.png" %}' alt="image-1">
+        <div class="intro">
+          <h1>Hotel Image 1</h1>
+          <p>The <span>Hotel Pic here </span> shows what we have in our restaurant</p>
+        </div>
+      </div>
+      <div class="cards">
+        <img src='{%static "hotel/3.png" %}' alt="image-2">
+        <div class="intro">
+          <h1>Hotel Image 2</h1>
+          <p>The <span>Hotel Pic here </span> shows what we have in our restaurant</p>
+        </div>
+      </div>
+      <div class="cards">
+        <img src='{%static "hotel/4.png" %}' alt="image-3">
+        <div class="intro">
+          <h1>Hotel Image 3</h1>
+          <p>The <span>Hotel Pic here </span> shows what we have in our restaurant</p>
+        </div>
+      </div>
+      
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section class="about">
+      <h2>About Our Restaurant</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id libero ac nulla suscipit congue. Morbi vitae nulla et velit iaculis scelerisque vitae eu massa. Curabitur cursus mauris id metus efficitur, a pulvinar nulla feugiat. Nam eu sollicitudin velit. Praesent id ex id purus rutrum auctor. Sed et tempor sem. Aliquam erat volutpat. Integer et faucibus urna. Sed blandit, enim in ultricies consequat, massa erat interdum felis, eu varius nisl nisi ut nunc.</p>
+      <a href="#" class="btn">Learn More</a>
+    </section>
+
+    <footer>
+      <p>&copy; 2023 Our Restaurant. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

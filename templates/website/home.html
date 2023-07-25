@@ -1,0 +1,141 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Restaurant Website</title>
+  <link href="{% static 'css/text.css' %}" rel="stylesheet" type="text/css" />
+  <script src="{% static 'js/script.js' %}"></script>
+  <link rel="icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'register' %}">Register</a></li>
+        <li><a href="{% url 'blog' %}"> Our Blogs</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        <li><a href="{% url 'search_videos' %}">YouTube Search</a></li>   
+        <li><a href="{% url 'reservartion' %}">Book Room</a></li>   
+        <li><a href="{% url 'profile' %}">User Profile</a></li>  
+         
+      </ul>
+    </nav>
+  </header>
+    <!--Any flash messages pop up in any page because this is the base template-->
+    {% if messages %}
+    <div class="alert alert-dismissible">
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %}
+
+  <div class="logo">
+    <!-- Add your logo content here -->
+  </div>
+  <style>
+    .alert {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 10px;
+    }
+    
+    .alert.alert-success {
+      background-color: #dff0d8;
+      color: #3c763d;
+    }
+    
+    .alert.alert-info {
+      background-color: #d9edf7;
+      color: #31708f;
+    }
+    
+    .alert.alert-warning {
+      background-color: #fcf8e3;
+      color: #8a6d3b;
+    }
+    
+    .alert.alert-danger {
+      background-color: #f2dede;
+      color: #a94442;
+    }
+    
+    .close {
+      font-size: 20px;
+      color: inherit;
+      opacity: 0.5;
+      margin-top: -10px;
+      margin-right: -10px;
+    }
+    
+    .logo {
+      text-align: center;
+      margin-top: 50px;
+      /* Add any additional styles for your logo */
+    }
+    
+  </style>
+
+  <section class="slideshow">
+    <div class="slides">
+      <div class="slide">
+        <video autoplay loop>
+          <source src="{% static 'images/video.mp4' %}" type="video/mp4">
+          {% comment %} <source src="movie.ogg" type="video/ogg"> {% endcomment %}
+        </video>
+      </div>
+      <div class="slide active">
+        <img src="{% static 'images/image.jpg' %}" alt="Slide 1">
+      </div>
+      <div class="slide">
+        <img src="{% static 'images/image1.jpg' %}" alt="Slide 2">
+      </div>
+      <div class="slide">
+        <img src="{% static 'images/image2.jpg' %}"  alt="Slide 3">
+      </div>
+      <div class="slide">
+        <img src="{% static 'images/image3.jpg' %}"  alt="Slide 3">
+      </div>
+      <div class="slide">
+        <img src="{% static 'images/image4.jpg' %}"  alt="Slide 3">
+      </div>
+      <div class="slide">
+        <video autoplay loop>
+          <source src="{% static 'images/video.mp4' %}" type="video/mp4">
+          {% comment %} <source src="movie.ogg" type="video/ogg"> {% endcomment %}
+        </video>
+      </div>
+    </div>
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </section>
+
+  <section class="about">
+    <h2 style="text-align: center;">Welcome to Our Restaurant</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet lorem nec massa scelerisque, a faucibus dui iaculis.</p>
+    <a href="{% url 'blog' %}" class="btn button">
+      <svg class="svgIcon" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+          <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path>
+      </svg>
+      Check Out Our Blogs
+  </a>
+  
+   
+  
+
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Restaurant Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>

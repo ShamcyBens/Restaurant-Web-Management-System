@@ -1,0 +1,141 @@
+
+
+body { 
+  background-image: url('{% static "images/bedbgg.jpg" %}');
+  background-size: cover;
+  object-fit: contain;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}           
+          
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 10px 20px;
+}
+
+nav ul li a:hover {
+  background-color: blueviolet;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+}           
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: green;
+}
+
+p {
+  font-size: 18px;
+}           
+
+.submitBtn {
+  width: 120px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(to left,rgb(230, 35, 0),rgb(255, 174, 0));
+  letter-spacing: 0.7px;
+}
+
+.submitBtn:hover .arrow {
+  animation: slide-in-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.submitBtn:active {
+  transform: scale(0.97);
+}
+
+.alert {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.alert.alert-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.alert.alert-info {
+  background-color: #d9edf7;
+  color: #31708f;
+}
+
+.alert.alert-warning {
+  background-color: #fcf8e3;
+  color: #8a6d3b;
+}
+
+.alert.alert-danger {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+.close {
+  font-size: 20px;
+  color: inherit;
+  opacity: 0.5;
+  margin-top: -10px;
+  margin-right: -10px;
+}
+
+.logo {
+  text-align: center;
+  margin-top: 50px;
+  /* Add any additional styles for your logo */
+}

@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <link rel="icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+               
+                <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                {% comment %} <li><a href="{% url 'logout' %}">Logout</a></li> {% endcomment %}
+                
+                <!-- Add more links here -->
+            </ul>
+        </nav>        
+    </header>
+
+
+    <!--Any flash messages pop up in any page because this is the base template-->
+    {% if messages %}
+    <div class="alert alert-dismissible">
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  {% endif %}
+
+  <div class="logo">
+    <!-- Add your logo content here -->
+  </div>
+  <style>
+    .alert {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 10px;
+    }
+    
+    .alert.alert-success {
+      background-color: #dff0d8;
+      color: #3c763d;
+    }
+    
+    .alert.alert-info {
+      background-color: #d9edf7;
+      color: #31708f;
+    }
+    
+    .alert.alert-warning {
+      background-color: #fcf8e3;
+      color: #8a6d3b;
+    }
+    
+    .alert.alert-danger {
+      background-color: #f2dede;
+      color: #a94442;
+    }
+    
+    .close {
+      font-size: 20px;
+      color: inherit;
+      opacity: 0.5;
+      margin-top: -10px;
+      margin-right: -10px;
+    }
+    
+    .logo {
+      text-align: center;
+      margin-top: 50px;
+      /* Add any additional styles for your logo */
+    }
+    
+  </style>
+
+    <main>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer>
+        <!-- Add footer content if needed -->
+    </footer>
+</body>
+</html>

@@ -1,0 +1,121 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
+    <title>User Profile </title>
+        
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            
+        }
+        h1 {
+            color: green;
+        }
+
+        h4{
+            color: blue;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: pink;
+                        
+        }
+          
+        nav ul {
+
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }           
+                    
+        nav ul li {
+
+            margin: 0 10px;
+        }
+          
+        nav ul li a {
+            text-decoration-skip-ink: data-toggle;
+            color: #333;
+            display: block;
+            padding: 10px 20px;
+        }
+          
+        nav ul li a:hover {
+            background-color: #ddd;
+        }
+          
+        .profile-container {
+            max-width: 600px;
+            
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display:flex;
+        }
+        .bio {
+            margin-top: 20px;
+        }
+        .bio p {
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <ul>
+    
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'blog' %}"> Our Blogs</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><a href="{% url 'search_videos' %}">YouTube Search</a></li>   
+            <li><a href="{% url 'reservartion' %}">Book Room</a></li>  
+            <li><a href="{% url 'profile' %}">User Profile</a></li>  
+             
+          </ul>
+        </nav>
+      </header>
+      <div class="profile-container">
+        <h1>Welcome, {{ profile.user.username }}!</h1>
+        <h4>Email: {{ profile.user.email }}</h4>
+
+        <img class="avatar" src="{{ profile.avatar.url }}" alt="{{ profile.user.username }}'s Avatar">
+        <div class="bio">
+            <strong>Bio:</strong>
+            <p>{{ profile.bio }}</p>
+            <a href="{% url 'Profile Update' %}" text-align: center;> Update Profile</a>
+                      
+
+        </div>
+    </div>
+
+    
+     
+
+
+    
+
+</body>
+</html>
+

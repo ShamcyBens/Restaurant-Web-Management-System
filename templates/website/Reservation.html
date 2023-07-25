@@ -1,0 +1,150 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservation Form</title>
+    <link rel="icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
+    <br>
+    <br>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-size: 100%;
+            padding: 0;
+            background-image: url('{% static "images/bedbgg.jpg" %}');
+            object-fit: contain;
+            background-repeat: no-repeat;
+        }
+        h1 {
+            color: black;
+            display: flex;
+            justify-content: center;
+
+            
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="datetime-local"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        input[type="submit"] {
+            background-color: #0080ff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0053ba;
+        }
+        .alert {
+          width: 80%;
+          margin: 0 auto;
+          text-align: center;
+          padding: 10px;
+        }
+        
+        .alert.alert-success {
+          background-color: #dff0d8;
+          color: #3c763d;
+        }
+        
+        .alert.alert-info {
+          background-color: #d9edf7;
+          color: #31708f;
+        }
+        
+        .alert.alert-warning {
+          background-color: #fcf8e3;
+          color: #8a6d3b;
+        }
+        
+        .alert.alert-danger {
+          background-color: #f2dede;
+          color: #a94442;
+        }
+        
+        .close {
+          font-size: 20px;
+          color: inherit;
+          opacity: 0.5;
+          margin-top: -10px;
+          margin-right: -10px;
+        }
+        
+    </style>
+</head>
+<body>
+
+  <!--Any flash messages pop up in any page because this is the base template-->
+  {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+  {% endif %}
+
+  
+       
+    <h1>Reservation Form</h1>
+    <form method="POST" action="{% url 'home' %}" >
+        {% csrf_token %}
+
+        <label for="id_name">Name:</label>
+        {{ form.name }}
+        <br>
+
+        <label for="id_email">Email:</label>
+        {{ form.email }}
+        <br>
+
+        <label for="id_phonenumber">Contact:</label>
+        {{ form.phonenumber }}
+        <br> 
+        
+        <label for="id_check_in_date">Check-In Date:</label>
+        {{ form.check_in_date }}
+        <br>
+
+        <label for="id_check_out_date">Check-Out Date:</label>
+        {{ form.check_out_date }}
+        <br>
+
+        <label for="id_room_capacity">Room Capacity:</label>
+        {{ form.room_capacity }}
+        <br>
+
+        <label for="id_room_pricing">Room Pricing:</label>
+        {{ form.room_pricing }}
+        <br>
+
+        <input type="submit" value="Book">
+    </form>
+
+
+</body>
+</html>

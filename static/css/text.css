@@ -1,0 +1,184 @@
+/* text.css */
+
+/* Reset default margin and padding */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: blueviolet;
+}
+
+
+
+/* Slideshow styles */
+.slideshow {
+  position: relative;
+  /* padding: 10px; */
+  text-align: center;
+  background-color: pink;
+  color: #fff;
+  overflow: hidden;
+
+}
+
+.slides {
+  display: flex;
+  overflow: hidden;
+  position: center;
+  width: 200%;
+  height: 0%;
+
+}
+
+.slide {
+  flex-shrink: 1;
+}
+
+.slide img {
+  height: 60vh;
+  min-width: 100vw;
+  margin: 1rem;
+  object-fit: contain;
+}
+
+.slide video {
+  height: 60vh;
+  min-width: 100vw;
+  margin: 1rem;
+  object-fit: contain;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: green;
+  text-decoration: none;
+  padding: 10px;
+  background-color: rgba(61, 7, 112, 0.5);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* About section styles */
+.about {
+  padding: 40px;
+  background-color: #f4f4f4;
+}
+
+.about h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about p {
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+.container{
+  display: flex;
+}
+
+img{
+  height: 300px; 
+
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+.button {
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  background-color: #4CAF50;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+  padding-left: 8px;
+  transition-duration: 0.5s;
+}
+
+.svgIcon {
+  height: 20px;
+  transition-duration: 1.5s;
+}
+
+.button:hover {
+  background-color: #32a852;
+  transition-duration: 0.5s;
+}
+
+.button:active {
+  transform: scale(0.97);
+  transition-duration: 0.2s;
+}
+
+.button:hover .svgIcon {
+  transform: rotate(250deg);
+  transition-duration: 1.5s;
+}

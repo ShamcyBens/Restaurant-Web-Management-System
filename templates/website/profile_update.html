@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Profile</title>
+    <link rel="icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('{% static "images/pexels.jpg" %}');
+            background-size: 100%;
+            background-color: #f7f7f7;
+            object-fit: contain;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: purple;
+            text-align: center;
+            justify-content: center;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            padding: 10px;
+        }
+        form input[type="file"] {
+            margin-bottom: 20px;
+        }
+        form button {
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #0052ad;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Your Profile</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="id_avatar">Avatar:</label>
+        {{ form.avatar }}
+        <label for="id_bio">Bio:</label>
+        {{ form.bio }}
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
